@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+    <title>CareerWorld</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            fontFamily: {
+              sans: ['Poppins', 'sans-serif'],
+            },
+            colors: {
+              'brand-dark': '#1a1c1e',
+              'brand-gray': '#26282b',
+              'brand-light-gray': '#A0A1A4',
+              'brand-lime': '#D0FD3E',
+              'brand-lime-dark': '#B8E037',
+            },
+            animation: {
+              'fade-in-up': 'fade-in-up 0.5s ease-out forwards',
+              'fade-in': 'fade-in 0.5s ease-out forwards',
+              'pop-in': 'pop-in 0.4s ease-out',
+              'fade-in-out': 'fade-in-out 1.5s ease-in-out forwards',
+              'slide-in-right': 'slide-in-right 0.3s ease-out forwards',
+              'shimmer': 'shimmer 2s linear infinite',
+            },
+            keyframes: {
+              'fade-in-up': {
+                '0%': { opacity: '0', transform: 'translateY(20px)' },
+                '100%': { opacity: '1', transform: 'translateY(0)' },
+              },
+              'fade-in': {
+                '0%': { opacity: '0' },
+                '100%': { opacity: '1' },
+              },
+              'pop-in': {
+                '0%': { transform: 'scale(1)' },
+                '50%': { transform: 'scale(1.4)' },
+                '100%': { transform: 'scale(1)' },
+              },
+              'fade-in-out': {
+                '0%': { opacity: '0', transform: 'translateY(5px)' },
+                '20%': { opacity: '1', transform: 'translateY(0)' },
+                '80%': { opacity: '1', transform: 'translateY(0)' },
+                '100%': { opacity: '0', transform: 'translateY(-5px)' },
+              },
+              'slide-in-right': {
+                '0%': { transform: 'translateX(100%)' },
+                '100%': { transform: 'translateX(0)' },
+              },
+              'shimmer': {
+                '0%': { backgroundPosition: '-1000px 0' },
+                '100%': { backgroundPosition: '1000px 0' },
+              }
+            }
+          }
+        }
+      }
+    </script>
+  <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/dompurify/dist/purify.min.js"></script>
+  <style>
+    /* Custom styles for rendered Markdown in the chat */
+    .chat-prose h1, .chat-prose h2, .chat-prose h3, .chat-prose h4, .chat-prose h5, .chat-prose h6 {
+      color: #ffffff;
+      font-weight: 600;
+      margin-top: 1rem;
+      margin-bottom: 0.5rem;
+    }
+    .chat-prose h3 {
+      font-size: 1.125rem; /* text-lg */
+      border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+      padding-bottom: 0.25rem;
+    }
+    .chat-prose strong, .chat-prose b {
+      color: #ffffff;
+      font-weight: 600;
+    }
+    .chat-prose ul, .chat-prose ol {
+      padding-left: 1.5rem; /* Indentation */
+      margin-top: 0.75rem;
+      margin-bottom: 0.75rem;
+      display: flex;
+      flex-direction: column;
+      gap: 0.5rem; /* Space between list items */
+    }
+    .chat-prose ul {
+      list-style-type: disc;
+    }
+    .chat-prose ol {
+      list-style-type: decimal;
+    }
+    .chat-prose li::marker {
+      color: #A0A1A4; /* brand-light-gray */
+    }
+    .chat-prose p:not(:last-child) {
+        margin-bottom: 0.75rem;
+    }
+  </style>
+  <script type="importmap">
+{
+  "imports": {
+    "react": "https://aistudiocdn.com/react@^19.1.1",
+    "react-dom/": "https://aistudiocdn.com/react-dom@^19.1.1/",
+    "react/": "https://aistudiocdn.com/react@^19.1.1/",
+    "@google/genai": "https://aistudiocdn.com/@google/genai@^1.16.0"
+  }
+}
+</script>
+<script>
+  window.va = window.va || function () { (window.va.q = window.va.q || []).push(arguments); };
+</script>
+<script src="/_vercel/insights/script.js" defer></script>
+</head>
+  <body class="bg-brand-dark">
+    <div class="fixed top-0 left-0 h-full w-full bg-brand-dark -z-10" style="background-image: radial-gradient(circle at top, rgba(40, 42, 48, 0.7) 0%, #1a1c1e 40%);"></div>
+    <div id="root"></div>
+    <script type="module" src="/index.tsx"></script>
+  </body>
+</html>
